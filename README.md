@@ -42,7 +42,7 @@ Here,
  
 - Gate Voltage(Vg): 0.9V
 - Source Voltage(Vs): 0V
-- Drain Voltage or Vout: 1.74445V
+- Drain Voltage or Vout: 1.79V
 - Drain current: 55uA
   
 This confirms that the MOSFET is in the saturation region, which is necessary for proper amplification.
@@ -63,6 +63,9 @@ This confirms that the MOSFET is in the saturation region, which is necessary fo
   
 ### 6. INFERENCE 
 The LTSpice simulation of the CMOS circuit provides insights into its operational behaviour in different domains:    
-- DC operating point analysis cofirmed that the MOSFET operates in saturation region. The observed drain voltage (1.74445V) and the drain current(55uA) align with theoretical values.
+- DC operating point analysis cofirmed that the MOSFET operates in saturation region. The observed drain voltage (1.799V) and the drain current(55uA) align with theoretical values.
 - Transient analysis verified that the circuit amplifies the input 1k Hz sine wave with minimal distortion. The output peak voltage of 1.751V suggests successful signal amplification. A phase shift in output indicates that the circuit introduces delay, which is typical in amplifiers.
+- The transient response graph shows how the circuit behaves over time.
+The response is smooth, with no unexpected delays or distortions.
+The circuit reacts well to changes, confirming its stability.
 - AC analysis showed a voltage gain of -17dB indicating strong signal amplification. There is a significant difference between the gain calculated from the AC analysis and the transient analysis. However, the AC analysis(-17dB) is likely the correct small-signal gain at the given frequency. The transient analysis(-30.88dB) is overestimated due to phase shift and peak misalignment that effects the calculation. The phase shift of ~120 degree at 1k Hz suggests that the frequency-dependent behaviour must be considered for applications requiring precise phase alignment.
